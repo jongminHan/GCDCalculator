@@ -38,12 +38,11 @@ Window {
         id: button
         x: 355; y: 221
         width: 67; height: 30
-        property int value: 0
 
         text: "Click"
         onClicked: {
             backend.setGcd();
-            value = backend.gcd
+            rectangle.value = backend.gcd
         }
     }
 
@@ -53,6 +52,7 @@ Window {
         x: 171; y: 354
         width: 142; height: 60
         color: "#dfd3d3"
+        property int value: 0
 
         Text {
             id: element
@@ -61,7 +61,7 @@ Window {
             width: 111
             height: 44
 
-            text: button.value.toString()
+            text: rectangle.value.toString()
             horizontalAlignment: Text.AlignHCenter
             font.pixelSize: 37
 
